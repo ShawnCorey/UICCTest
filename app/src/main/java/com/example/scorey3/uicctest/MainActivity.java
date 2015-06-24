@@ -23,6 +23,10 @@ public class MainActivity extends Activity {
         String filePath = "foo";
         int fileID = 0x6FAD;
         byte[] cipherInd = tm.iccExchangeSimIO(fileID,176,0,0,0,filePath);
+        Log.d("UICCTest", String.format("Return length: 0x%20x", cipherInd.length));
+        for (byte b: cipherInd){
+            Log.d("UICCTest", String.format("0x%20x", b));
+        }
     }
 
     @Override
